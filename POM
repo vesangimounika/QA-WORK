@@ -1,0 +1,28 @@
+Page Object Model
+
+
+packagepageObjectModel;
+importorg.openqa.selenium.By;
+importorg.openqa.selenium.WebDriver;
+public class Loginpage {
+	WebDriver driver; 
+	By Username=By.id("user_login");
+	By password=By.xpath(".//*[@id='user_pass']");
+	By Login=By.name("wp-submit");
+	publicLoginpage(WebDriver driver)
+{
+	this.driver = driver;
+}public void typeUsername()
+{
+driver.findElement(Username).sendKeys("admin");
+}
+public void typePassword()
+{
+driver.findElement(password).sendKeys("demo123");
+}
+public void clickOnLogin()
+{
+driver.findElement(Login).click();
+}
+}
+
