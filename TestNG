@@ -1,0 +1,209 @@
+package TestNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+
+
+
+
+
+public class TestNgj {
+WebDriver d;
+@BeforeMethod
+public void openBrowser() throws Exception
+{
+ System.setProperty("webdriver.gecko.driver", "D:\\Selenium Jars\\selenium web drivers\\geckodriver.exe");
+
+d= new FirefoxDriver();
+Thread.sleep(2000);
+System.out.println("Please Wait some time..");
+}
+
+
+
+
+@Test(priority=1)
+public void openfacebook1() throws Exception
+{
+Thread.sleep(2000);
+d.get("https://www.google.com/?gws_rd=ssl");
+System.out.println("open google");
+
+}
+
+
+
+@Test(priority=2)
+public void opengmail() throws Exception
+{
+Thread.sleep(2000);
+d.get("https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/%3Fgws_rd%3Dssl#identifier");
+System.out.println("open gmail");
+}
+
+
+
+@Test(priority=3)
+public void openfacebook() throws Exception
+{
+Thread.sleep(2000);
+d.get("https://www.facebook.com/");
+System.out.println("open facebook");
+}
+
+
+
+
+
+
+
+@AfterMethod
+public void CloseBrowser() throws Exception
+{
+Thread.sleep(2000);
+System.out.println("Browser Closed");
+d.close();
+} 
+
+}
+
+
+
+
+
+
+Test NG
+package trainingbasis;
+
+public class SavingsAccount {
+//creating property/data members 
+//creating variable 
+int accountNumber;
+int pin;
+double balance;
+String name;
+static float interestrate=5.7f;
+
+
+
+
+
+
+
+
+public SavingsAccount(int accountNumber, int pin, double balance, String name) {
+//super();
+this.accountNumber = accountNumber;
+this.pin = pin;
+this.balance = balance;
+this.name = name;
+}
+public void deposit (int depositAmount)
+{
+balance=balance+  depositAmount;
+System.out.println("balance is: "+balance);
+
+}
+//void with parameter
+public void withdraw(int withdrawAmount)
+   
+{
+
+if(withdrawAmount<=balance)
+{
+balance=balance-withdrawAmount;
+System.out.println("balance is : " +balance);
+}
+else 
+{
+System.out.println("you have insufficient funds");
+}
+}
+//creating method with void 
+     public void balnceEnq()
+     {
+     System.out.println("balance is " +balance);
+     }
+public static float interest()
+{
+return interestrate;
+}
+}
+package trainingbasis;
+
+
+
+
+
+
+
+
+public class Test {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+SavingsAccount account = new SavingsAccount(101,111,5000,"shiva");
+SavingsAccount account1=new SavingsAccount(102,222,3000,"shekar");
+
+
+
+account.deposit(300);
+account.withdraw(200);
+
+account1.deposit(299);
+account1.withdraw(10000);
+
+
+
+}
+
+}
+
+
+
+
+java inheriatance
+package testgmail;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Testgmail {
+
+
+
+
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+WebDriver d=new FirefoxDriver();
+
+
+Thread.sleep(5000);
+d.get("https://www.google.com/?gws_rd=ssl");
+
+
+Thread.sleep(5000);
+d.findElement(By.id("email")).sendKeys("mnaidu.thota@gmail.com");
+
+
+Thread.sleep(5000);
+d.findElement(By.id("pass")).sendKeys("lakshminaidu");
+
+
+Thread.sleep(5000);
+d.findElement(By.id("u_0_o")).click();
+
+}
+}
+Testing gmail
+
+ 
+
+
+
+
+
