@@ -1,0 +1,19 @@
+Using POM Calling  methods
+
+packagepageObjectModel;
+importorg.openqa.selenium.WebDriver;
+importorg.openqa.selenium.firefox.FirefoxDriver;
+importorg.testng.annotations.Test;
+public class VerifyWordPressLogin {
+	@Test
+public void verifyLogin (){
+	System.setProperty("webdriver.gecko.driver", "D:\\Selenium Jars\\selenium web drivers\\geckodriver.exe");
+WebDriver driver=new FirefoxDriver();
+	driver.manage().window().maximize();
+	driver.get("https://wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Fwordpress.com%2Fcom-vs-org%2F%3Fsgmt%3Dbb%26ab%3Dcom-vs-org_lp_test_20170213%26utm_source%3Dbing%26utm_campaign%3DWordPress-Generic-Exact-US-GP%26utm_medium%3Dcpc%26keyword%3Dwordpress%252B%26creative%3D11574008692%26campaignid%3D128065278%26adgroupid%3D3099786266%26matchtype%3De%26device%3Dc%26network%3Do");
+	LoginpageLg=new Loginpage(driver);
+	Lg.typeUsername();
+	Lg.typePassword();
+	Lg.clickOnLogin();
+}
+}
